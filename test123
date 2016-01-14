@@ -1,7 +1,9 @@
 #!/bin/bash
+if [[ -z "$1" ]]; then
+	echo "missing parameter"
+	exit 4
+fi
+
 mysql -t -u root -p1234 neu <<EOF
-use mysql;
-SELECT $1 FROM neu.telefonbuch;
+SELECT $1 FROM telefonbuch;
 EOF
-
-
