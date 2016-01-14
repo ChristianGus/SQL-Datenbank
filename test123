@@ -1,7 +1,7 @@
 #!/bin/bash
 mysql -t -u root -p1234 neu <<EOF
 use mysql;
-SELECT * FROM neu.telefonbuch;
+SELECT $1 FROM neu.telefonbuch;
 EOF
 
 
