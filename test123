@@ -5,5 +5,7 @@ if [[ -z "$1" ]]; then
 fi
 
 mysql -t -u root -p1234 neu <<EOF
-SELECT $1 FROM telefonbuch;
+SELECT $1 FROM telefonbuch
+INNER JOIN vorwahl
+ON telefonbuch.vorwahl=vorwahl.id;
 EOF
